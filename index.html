@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>pulsar</title>
+    <link
+      rel="icon"
+      href="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDYiIGhlaWdodD0iMjQiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik00NiAuMzEyYy0xLjMyMy42MDEtMi43NTYgMS4wNjUtNC4xMTYgMS42Mi0yLjE2LjgxLTQuMjM5IDEuNzQyLTYuNDE1IDIuNTU2LTEuMzcuNTktMi44NDggMS4xNTktNC4yMTYgMS43NzUtMy43NDIgMS40MDUtNy4yOTEgMy4yNjEtMTAuOTA4IDQuOTIzLTIuNjQ4IDEuMzktNS40NjggMi44MDEtNy4yNzQgNS4zMDgtMS42NTcgMi4xNC0yLjEwOCA0LjkyMS0yLjYgNy41MDYtLjEyOC0yLjM0Ni0uMTA5LTQuOC0xLjI2NS02LjkxLS44OC0xLjU3OS0yLjk1NC0xLjkxNC00LjU3Ni0xLjU0Ny0xLjQ5Ny0uMTYtMy41MDIgMS4xNTYtNC42MDQuODA0IDEuNjM2LTEuMTIgMy41Mi0xLjg3NCA1LjEyOC0yLjk5IDIuMDAyLTEuMzcyIDQuMTkyLTIuNzExIDUuMjU3LTUuMDA1LjkzOS0xLjg0NyAxLjUwMi0zLjg0NiAyLjE3OS01Ljc5Ni42NTctLjk0OS4yOTIgMS43OTMuNzE0IDIuNDI1LjQwNyAxLjkyIDIuNDQ4IDMuMjYgNC4zMSAyLjYyOSAxLjkxLS4zNTkgMy44MTEtLjkzMSA1LjY4Ni0xLjQ1NyAxLjY1MS0uMzU2IDMuMjQ5LS44OTkgNC45LTEuMzU4IDEuODEyLS40MjggMy43MzMtMS4wMjIgNS40NTMtMS40OTFDMzcuNDMyIDIuMTk4IDQxLjE5OCAxLjE4OCA0NC45Ny4wNjJjLjM0Ny0uMDQ4LjgxMS0uMDg5IDEuMDI5LjI1eiIgc3R5bGU9ImZpbGw6I2QyZjtmaWxsLW9wYWNpdHk6MSIvPjwvc3ZnPg=="
+    />
+    <style>
+      :root {
+        --mc: #a782f9;
+      }
+
+      body {
+        background: #000;
+        overflow: hidden;
+        margin: 0;
+        height: 100vh;
+      }
+
+      .container {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+
+      h1 {
+        color: var(--mc);
+        font-size: 42px;
+        font-family: monospace;
+        position: relative;
+        text-shadow: 0 0 10px var(--mc), 0 0 20px var(--mc), 0 0 30px var(--mc);
+      }
+
+      h1::before {
+        content: attr(data-text);
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        animation: glitch 2s infinite;
+        clip-path: polygon(0 0, 100% 0, 100% 45%, 0 45%);
+        transform: translate(-2px, -2px);
+        color: var(--mc);
+        text-shadow: 0 0 5px var(--mc), 0 0 15px var(--mc);
+      }
+
+      @keyframes glitch {
+        0%,
+        100% {
+          clip-path: polygon(0 0, 100% 0, 100% 45%, 0 45%);
+          transform: translate(0);
+        }
+        33% {
+          clip-path: polygon(0 0, 100% 0, 100% 15%, 0 15%);
+          transform: translate(-5px, -5px);
+        }
+        66% {
+          clip-path: polygon(0 85%, 100% 85%, 100% 100%, 0 100%);
+          transform: translate(5px, 5px);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1 data-text="pulsar в разработке">
+        pulsar в разработке
+      </h1>
+    </div>
+  </body>
+</html>
